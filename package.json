@@ -1,6 +1,6 @@
 {
   "name": "mini-json-pointer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Resolve, read, and change values in JSON documents with JSON Pointer strings.",
   "type": "module",
   "main": "src/index.js",
