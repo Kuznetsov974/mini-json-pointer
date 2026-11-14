@@ -37,3 +37,10 @@ gives `-` special meaning for array assignment. So `get({ '-': 1 }, '/-')`
 returns `1`, but `get(['a'], '/-')` throws `PointerNotFoundError`. Likewise,
 `set` will append with `/-` on an array but will happily create a literal `"-"`
 property on an object.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
